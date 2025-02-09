@@ -1,0 +1,50 @@
+# Node.js dependencies (if any utility scripts/node modules are added)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Temporary files and logs
+*.log
+npm-debug.log*
+*.tmp
+
+# System files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Content backups or drafts not intended for publishing
+drafts/
+
+# OS-generated files
+# macOS
+*.DS_Store
+
+# Windows
+*.Thumbs.db
+*.ehthumbs.db
+Desktop.ini
+
+# Other system-related files
+*.directory
+
+# Markdown-specific cache files created by editors
+*.md.cache
+
+# Optional metadata directory (unpublished auto-generated JSON caches)
+metadata/
+
+# Ignore image editor artifacts
+*.psd
+*.xcf
+
+# Optional: If you render/preprocess content
+dist/
+generated/
+
+# Obsidian-specific files (if publishing notes from Obsidian)
+.obsidian/
+workspace.json
