@@ -1,4 +1,4 @@
-# Node.js dependencies (if any utility scripts/node modules are added)
+# Node.js dependencies (if any utility build-scripts/node modules are added)
 node_modules/
 package-lock.json
 yarn.lock
