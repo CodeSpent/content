@@ -47,57 +47,13 @@ statsLastUpdated: "2024-11-10"
 ---
 
 ## Overview
+**SnipDis** is a Discord bot and extension ecosystem for sharing articles, videos, and websites in Discord forum channels. It offers a clean and consistent interface to make sharing information more stream-lined.
 
-SnipDis is a feature-rich Discord bot designed to make sharing and managing code snippets effortless for development teams. Whether you're collaborating on a project, helping others debug, or building a knowledge base, SnipDis provides the tools you need.
+### Why SnipDis?
+I built **SnipDis** as I run a Discord server for software engineers, politics, economics, music, arts, and more. The idea behind this server can be reduced to **we love learning and we love teaching**. It's a place where
+everyone shares the same mission of just striving to be better at what they do and enable those around them to get started and do the same.
 
-## Key Features
+Two of the biggest issues we have are consistency in content formatting and the friction that comes with sharing information found. I know it can sound ridiculous, but copying a link, writing a title, pasting it in the message, pressing enter
+to force the meta content to register, and then compose a contextual message around it can be a really painful experience (especially if you're doing this 20 times a day).
 
-### Syntax Highlighting
-Support for over 150 programming languages with beautiful syntax highlighting powered by Prism.js.
-
-### Version Control
-Track changes to your snippets over time with built-in versioning. Roll back to previous versions or compare differences.
-
-### Team Collaboration
-- Share snippets privately or publicly within your server
-- Organize snippets with custom tags and categories
-- Search through your team's snippet library
-
-### Smart Search
-Quickly find the snippet you need with full-text search across titles, descriptions, and code content.
-
-## Getting Started
-
-1. Click the "Add to Discord" button above
-2. Select your server and authorize the bot
-3. Use `/snippet create` to create your first snippet
-4. Share it with `/snippet share <name>`
-
-## Commands
-
-```
-/snippet create   - Create a new code snippet
-/snippet list     - View all your snippets
-/snippet share    - Share a snippet in the channel
-/snippet edit     - Edit an existing snippet
-/snippet delete   - Delete a snippet
-/snippet search   - Search for snippets
-```
-
-## Technical Details
-
-Built with modern technologies to ensure reliability and performance:
-
-- **Node.js** for the runtime environment
-- **Discord.js v14** for Discord API integration
-- **MongoDB** for snippet storage
-- **Redis** for caching and rate limiting
-- **TypeScript** for type safety
-
-## Roadmap
-
-- [ ] Snippet templates
-- [ ] Code execution (sandboxed)
-- [ ] AI-powered code suggestions
-- [ ] GitHub Gist integration
-- [ ] Custom syntax themes
+**SnipDis** aims to solve this problem by turning this process into a single browser extension click or a single *slash command* in Discord.

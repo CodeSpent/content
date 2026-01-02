@@ -1,0 +1,98 @@
+---
+title: "LetsPlay Poker"
+shortDescription: "Texas Hold'em training platform for strategy mastery."
+description: "A poker training platform built to help players develop pre-flop fundamentals, hand range analysis, and mathematical decision-making."
+category: "Web Application"
+status: "active"
+hasDetailPage: true
+featured: true
+websiteUrl: "https://letsplay.poker"
+screenshots:
+  - "/images/projects/letsplaypoker-hero.png"
+screenshotLink:
+  image: "/images/projects/letsplaypoker-hero.png"
+  url: "https://letsplay.poker"
+  alt: "LetsPlay Poker Dashboard"
+ctaButtonConfig:
+  primaryColor: "#34D399"
+  primaryHoverColor: "#10B981"
+  secondaryIconColor: "#34D399"
+  shadowColor: "emerald-400/20"
+technologies:
+  - "Next.js"
+  - "TypeScript"
+  - "Tailwind CSS"
+  - "Vercel"
+
+links:
+  - type: "website"
+    url: "https://letsplay.poker"
+    label: "Visit LetsPlay Poker"
+  - type: "github"
+    url: "https://github.com/CodeSpent/pokerpal"
+    label: "View Source"
+
+startDate: "2025-11-01"
+
+stats:
+  - label: "Sessions"
+    value: 86
+    icon: "play"
+  - label: "Hands"
+    value: 214
+    icon: "cards"
+  - label: "Avg Score"
+    value: "47%"
+    icon: "chart"
+statsLastUpdated: "2026-01-02"
+---
+
+## About LetsPlay Poker
+
+LetsPlay Poker is a Texas Hold'em training platform designed to help players develop their strategic foundation from the ground up. It provides interactive tools for mastering pre-flop decisions, building and analyzing hand ranges, practicing scenario-based decision making, and understanding the mathematics that drive profitable play.
+
+### Why LetsPlay Poker?
+
+If you've read my writeup on **TakePoint**, you might recall that I built a Texas Hold'em engine to learn about real-time communication systems. What started as a learning exercise for understanding game state synchronization and event-driven architecture turned into something I actually wanted to use.
+
+I've played poker casually for years, but I never took the time to actually study the game. I'd sit at a table, play my gut, and wonder why I kept bleeding chips in spots that "felt" close. The reality is that poker is a solved game at certain stack depths and positions. There are mathematically optimal plays, and I was ignoring all of them.
+
+Most poker training tools I found were either outdated, overly academic, or designed for players already well past the fundamentals. I didn't need GTO solver outputs for three-bet pots. I needed to know when to open from the cutoff and what hands to defend from the big blind. **LetsPlay Poker** is the tool I wished existed when I started taking the game seriously.
+
+The irony isn't lost on me that a project built to learn about real-time systems became something I use almost daily to learn about a completely different domain. But that's often how the best tools emerge -- from solving your own problems.
+
+
+### What I Learned Building LetsPlay Poker
+
+#### Game State Management
+Poker game state is deceptively complex. At any given moment, you need to track positions, stack sizes, pot size, betting history, board cards, hand ranges, and the current action. Each of these elements affects the others, and state transitions need to be deterministic.
+
+Coming from typical web application development where state is often a handful of form values or a list of items, poker state felt more like managing a finite state machine with dozens of valid transitions. I had to think carefully about how state flows through betting rounds, how to represent incomplete information, and how to roll back state for scenario replays. This was a fundamentally different mental model than CRUD operations, and it forced me to be much more intentional about state architecture.
+
+#### Poker Math & Algorithms
+Implementing the mathematical tools was where I spent most of my time. Pot odds calculations seem straightforward until you need to account for implied odds, reverse implied odds, and multi-street scenarios. ICM calculations for tournament decisions involve iterating over all possible finish distributions. Push/fold charts require precomputing equity calculations for every hand against estimated calling ranges.
+
+Hand evaluation was its own rabbit hole. Comparing two hands for equity requires simulating or calculating outcomes across all possible board runouts. The combinatorics get expensive fast, and I had to make tradeoffs between accuracy and performance. I learned more about memoization, lookup tables, and mathematical shortcuts in this project than in years of typical application development.
+
+#### UI/UX Challenges
+The hardest part of this project wasn't the math or the state management -- it was making the information accessible without overwhelming the user. Poker involves a lot of numbers, a lot of edge cases, and a lot of "it depends" answers. A hand range chart has 169 cells. A pot odds calculator needs multiple inputs. A scenario replay needs to show history while keeping focus on the current decision.
+
+I spent significant time on information hierarchy, trying to surface the most important data while keeping secondary information available. Interactive range charts needed to be both viewable and editable. Progress tracking needed to motivate without discouraging. This project gave me a much deeper appreciation for the work that goes into making complex tools feel simple.
+
+
+## Core Features
+
+### PreFlop Strategy
+Master position-based opening ranges with interactive charts and decision practice. Understand which hands to play from each position and why.
+
+### Range Finder
+Build, customize, and save hand ranges for any situation. Visualize your ranges on an interactive grid and compare them against common strategies.
+
+### Scenarios
+Test your skills with quiz-style decisions and hand replays. Get immediate feedback on your choices and track your improvement over time.
+
+### Math Tools
+Pot odds, ICM, and push/fold calculators at your fingertips. Input your situation and get mathematically-backed recommendations.
+
+### Progress Tracking
+Monitor your training sessions and scenario scores over time. Identify weak spots and focus your practice where it matters most.
