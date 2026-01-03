@@ -1,0 +1,104 @@
+---
+title: "Portfolio"
+shortDescription: "Personal portfolio and engineering blog built as a learning platform."
+description: "A custom-built portfolio site showcasing projects, blog articles, and photography with sophisticated content management and search."
+category: "Web Application"
+status: "active"
+hasDetailPage: true
+featured: true
+websiteUrl: "https://phanford.dev"
+screenshots:
+  - "/images/projects/phanford-dev-hero.png"
+screenshotLink:
+  image: "/images/projects/phanford-dev-hero.png"
+  url: "https://phanford.dev"
+  alt: "phanford.dev Homepage"
+ctaButtonConfig:
+  primaryColor: "#818cf8"
+  primaryHoverColor: "#6366f1"
+  secondaryIconColor: "#818cf8"
+  shadowColor: "indigo-400/20"
+technologies:
+  - "Next.js"
+  - "TypeScript"
+  - "Contentlayer"
+  - "Tailwind CSS"
+  - "Lunr.js"
+  - "MDX"
+  - "Vercel"
+
+links:
+  - type: "website"
+    url: "https://phanford.dev"
+    label: "Visit phanford.dev"
+  - type: "github"
+    url: "https://github.com/CodeSpent/phanford.dev"
+    label: "View Source"
+
+startDate: "2022-02-20"
+---
+
+## About phanford.dev
+
+phanford.dev is my personal portfolio, blog, and photography gallery. It's the home for everything I build, write, and capture. But calling it a portfolio undersells what it actually is -- it's a production application that I've treated with the same rigor as any client project.
+
+Most developers have portfolios. Most of them are also either template-based, minimal static sites, or abandoned side projects. There's nothing wrong with that, but I wanted something different. I wanted a platform I could iterate on endlessly, a sandbox where I could experiment with patterns I'd never get to try at work, and a codebase that demonstrated how I actually think about software architecture.
+
+### Why phanford.dev?
+
+The honest answer is that I needed a place to put things. I had blog posts scattered across Medium, photography sitting in Lightroom catalogs, and projects with nowhere to live. But the deeper motivation was that I wanted full ownership over how my work was presented. I didn't want to be constrained by someone else's design decisions or feature set.
+
+I also recognized that the portfolio itself could be a showcase of capability. There's something meta about building a complex system to present your ability to build complex systems. Anyone can list technologies on a resume. Fewer can point to a live application with sophisticated content management, full-text search, and a custom filtering system and say "I built this."
+
+The third motivation was purely selfish: I wanted a learning platform. Every new pattern I want to try, every library I want to evaluate, every architecture decision I want to stress-test -- phanford.dev is where I do it. The site has been rewritten in pieces more times than I can count. It started as a basic Next.js Pages Router app and has evolved into an App Router application with Contentlayer, custom context systems, and build-time search indexing. Each iteration taught me something I brought to my professional work.
+
+### What I Learned Building phanford.dev
+
+#### Content Architecture
+
+The content layer of this site went through several iterations before landing on Contentlayer. I started with raw markdown files and a custom parser, moved to a headless CMS, and eventually settled on Contentlayer for its type safety and build-time generation.
+
+The more interesting challenge was building a unified abstraction over different content types. Blog articles, photos, and documents all have different shapes, but I wanted shared UI for filtering, sorting, and pagination. This led to the DataSource pattern -- a uniform interface that abstracts away the differences between content types while exposing consistent getter methods. It sounds simple, but getting the types right while maintaining flexibility took real thought. The pattern has held up well as I've added new content types.
+
+MDX rendering was its own rabbit hole. Server components in Next.js App Router can't use hooks, but MDX rendering requires client-side hydration. The solution was a clear separation: server components fetch and pass data, client components render MDX content. Sounds obvious in retrospect, but I spent more time than I'd like to admit debugging hydration mismatches before landing on the right architecture.
+
+#### State Management
+
+phanford.dev has two distinct context systems that took significant effort to get right. The first handles site-wide settings like dark mode, animation preferences, and banner visibility -- all persisted to localStorage. The second handles article filtering, search, and pagination.
+
+The filtering system is more sophisticated than it might appear. It supports multi-group tag filtering with configurable AND/OR logic within and across groups. A user can filter for articles tagged "React" AND "TypeScript" while also including anything tagged "Performance" OR "Architecture." Building this without creating a mess of derived state required careful thought about data flow and where computations should live.
+
+URL-based pagination was another area that seemed simple until it wasn't. Server components read the page param from URL query strings, but client components also need to update the URL without causing full page reloads. Coordinating between server and client state while keeping the URL as the source of truth took several attempts to get right.
+
+#### Search Implementation
+
+I wanted full-text search without a backend. The solution was Lunr.js with build-time index generation. A custom build script processes all articles, extracts content from MDX, and generates a JSON search index at build time. Client-side, a custom hook loads the index and provides a search function.
+
+The tricky part was balancing index size against search quality. Boosting title matches over body content, handling tag searches, and ensuring the index didn't bloat the initial page load all required tuning. The current implementation loads the index lazily on first search, keeping initial load fast while still providing responsive search.
+
+#### Interactive Features
+
+The particle background, photography modal, and various animations were opportunities to play with areas I rarely touch in professional work. The particle system in particular was a fun challenge -- balancing visual appeal against performance, handling window resizing, and making it non-intrusive enough to not distract from content.
+
+The photography gallery required integrating EXIF metadata extraction at build time. A custom script processes image files, extracts camera settings, and generates JSON that Contentlayer picks up. The modal system handles keyboard navigation, touch gestures on mobile, and smooth transitions between images.
+
+
+## Core Features
+
+### Technical Blog
+Long-form articles with MDX support, syntax highlighting, reading time estimates, and a custom table of contents. Articles support rich media embedding and interactive code examples.
+
+### Photography Gallery
+A dedicated space for photography with automatic EXIF extraction, categorization, and a full-screen viewing experience. Each photo includes camera settings, location, and technical metadata.
+
+### Project Showcase
+Featured projects with live stats, screenshots, and detailed write-ups. Projects can pull real metrics via external integrations.
+
+### Full-Text Search
+Client-side search powered by Lunr.js with build-time index generation. Searches across titles, descriptions, tags, and full article content.
+
+### Advanced Filtering
+Multi-group tag filtering with AND/OR logic, sorting options, and paginated results. Works consistently across all content types through the DataSource abstraction.
+
+### Customizable Experience
+Dark mode, animation controls, and preference persistence. Users can toggle background particles, adjust theme, and customize their reading experience.
