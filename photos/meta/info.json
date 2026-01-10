@@ -11,5 +11,6 @@
   "lens": "Canon RF 24-70mm f/2.8L IS USM",
   "settings": "f/8, 1/125s, ISO 100",
   "category": "nature",
-  "orientation": "portrait"
+  "orientation": "portrait",
+  "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAKCAIAAAD3rtNaAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA50lEQVR4nAHcACP/ADo7QW1qdnt1eTk4OiUmKD0+P5WUkwDIvKeyrZb1zsmrkI8sMTIpKSskJCYAV1VLd3JwlIyXf3WBOTlCGhobJyYmABsbIjw6XzIyUj06XkRAYRAQFAQEAwAYGBheWmJnY2dRTlINDQ4aGhoSEhIADQ0O9u76x77NNzY8EQ8VFhQWGRkZACsmKBsYGRAQEBoaHTlOUSU0Mw8ODgCmrYlBTj4WEhA+REJugn4TExM1SEUAiJl3MzQvgpGS0O3qO0VDFxUVKTQyAK7j29f/+3yUkhgbGhIUEhkaGRMTEUa1P4eU0xQ9AAAAAElFTkSuQmCC"
 }

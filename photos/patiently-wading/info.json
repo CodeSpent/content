@@ -2,10 +2,14 @@
   "title": "Patiently Wading",
   "description": "While I was too focused looking for a shot from the obvious angles, Rya found this gem just out of my sight.",
   "date": "2024-01-15",
-  "tags": ["nature", "water"],
+  "tags": [
+    "nature",
+    "water"
+  ],
   "camera": "Canon EOS R5",
   "lens": "Canon RF 24-70mm f/2.8L IS USM",
   "settings": "f/8, 1/125s, ISO 100",
   "category": "nature",
-  "orientation": "portrait"
+  "orientation": "portrait",
+  "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAKCAIAAAD3rtNaAAAACXBIWXMAAAsTAAALEwEAmpwYAAAA5UlEQVR4nGNQMTRR0jeOqG9ZePXmlf//k5s6BIQEGYTFRAVFhIMLCju27DT38lLR1ZOQlmGQU5YUFOJR19EwtDJhZWEQFuETEhJgUNcVlJQVExMXlpAUlZSVlJIVFRYRYJBR4ZKR45eQFJVWkJeQFhcSYuMX4GYQk+BWUVfS0DfQtbJWUlcXFhHm5OJiEJOSlFVSUFJX1zCzkFZRkFVXE5WQYJCUlRAU4lW3dwxs7tL19lW2sOITEGAQE+cVFhSwCI3MWbXJMild3dmDmYmRQVJWWlxSStPKJrG9O7i20T0nX1xUFAAiPifl3Vf0fgAAAABJRU5ErkJggg=="
 }

@@ -12,5 +12,6 @@
   "category": "portrait",
   "orientation": "landscape",
   "naturalWidth": 1182,
-  "naturalHeight": 665
+  "naturalHeight": 665,
+  "blurDataUrl": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAGCAIAAAB1kpiRAAAACXBIWXMAAC4jAAAuIwF4pT92AAAAw0lEQVR4nGOon9iT29wSFuic4G2qryLv4+mmo66upaWlq6NtYW7KoKWry8DAICcu5GqorK0g5eFgLyokJC4hwcPFpaqiyiAoJMzEyMTEyMDFzCgtKqiipNg1a+qkOb3aWmqMDIwM0tJSkpLicjLSivKy+joagYG+r/7/XrRliYqKAhMDE0N5U1lRZV5uQWpFZVZFTW5je9XybcvKG4tsLE1sLEwYcgszs3JT8wrTyisyyyuzqhqLmrurSssyUpMiQ/09ASXhMqfw5xY1AAAAAElFTkSuQmCC"
 }
