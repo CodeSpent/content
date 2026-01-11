@@ -34,6 +34,11 @@ Desktop.ini
 # Markdown-specific cache files created by editors
 *.md.cache
 
+# Latex specific cache/outpit files
+*.aux
+*.log
+*.out
+
 # Optional metadata directory (unpublished auto-generated JSON caches)
 metadata/
 
