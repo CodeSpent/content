@@ -1,0 +1,3 @@
+[submodule "documents/resume"]
+	path = documents/resume
+	url = https://github.com/CodeSpent/resume.git
