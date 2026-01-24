@@ -31,6 +31,7 @@ jobs:
           git push
 
       - name: Trigger phanford.dev rebuild
+        continue-on-error: true
         uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.PHANFORD_DEV_PAT }}
